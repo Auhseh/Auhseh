@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/Assets/Auhseh_logo.svg" type="image/svg" sizes="16x16">
+    <link rel="stylesheet" href="/aesthetics.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--BodyText-->
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Krub&display=swap" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/2d8cf0a1ae3cf90fc45730a9e56b1db2?family=GD+Boing" rel="stylesheet" type="text/css"/>
+
+    <title>AUHSEH</title>
+</head>
+
+  <!--Unto say all kelebe must be observed,
+        Man gatz dey comment for code, e get why-->
+
+<body>
+
+    <div class="main_container">
+        <div class="left">
+            <div class="logo_wrapper">
+                <a class="text" href="index.html"><img class="main_logo_about" src="/Assets/Auhseh_logo.svg" alt="" srcset=""></a>
+                <div class="top_menu">
+                    <span class="top_menu_item"><a class="text" href="index.html">Home</a></span>
+                    <span class="top_menu_item"><a class="text" href="about.html">About</a></span>
+                    <span class="top_menu_item"><a class="text_focus" href="projects_.html">Projects</a></span>
+                    <span class="top_menu_item"><a class="text" href="/experiments.html">Experiments</a></span>
+                </div>
+
+                      <!--MOBILE-->
+                <div class="mobile_contacts">
+                    <span><a class="text" href="https://twitter.com/auhseh" target="_blank"><img class="mb_contacts" src="/Assets/a.svg" alt="" srcset=""></a></span>
+                    <span><a class="text" href="https://dribbble.com/Auhseh" target="_blank"><img class="mb_contacts" src="/Assets/b.svg" alt="" srcset=""></a></span>
+                    <span><a class="contact_link" href="mailto:victorakhilome@gmail.com" target="_blank"><img class="mb_contacts" src="/Assets/c.svg" alt="" srcset=""></a></span>
+                </div>
+
+                <div class="button_top">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="contact_button">Contact me</button>
+                        <div id="myDropdown" class="dropdown_items">
+                            <a class="contact_link_home" href="mailto:victorakhilome@gmail.com" target="_blank">Email</a>
+                            <a class="contact_link_home" href="https://twitter.com/auhseh" target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                 </div>
+
+            </div>
+
+
+            <div class="heading_wrapper_projects">
+                <h1 class="h1_heading_projects_01">Reducing Friction in password reset flows
+                    (Quidax)
+                </h1>
+            </div>
+
+            <div class="project_wrapper">
+                <div class="project_2">
+                    <img class="project_hero_1" src="/Assets/proj 1@2x.png" alt="">
+                </div>
+
+                
+
+                <article class="article_body">
+
+                    <br>
+                    <h2>TL;DR</h2>
+
+                    <p class="body_text_case">I attempted to reduce friction in Quidax' password reset flow by
+                        introducing a 'Guest Sign In' feature that leverages <strong>Security questions</strong> and <strong>Device logs</strong> when OTPs via email fail to deliver.
+                        <br>
+                        This reduces drop-offs in the password reset flow and cuts down the number of steps.
+                    </p>
+
+                        <img class="project_hero" src="/Assets/Solution@2x.png" alt="">
+                        <img class="project_hero_" src="https://res.cloudinary.com/dlamc1ky8/image/upload/v1604208787/Assets/quidax_gif_cboug7.gif" alt="">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                   
+                    <h2>Background</h2>
+
+                    <p class="body_text_case">Recently, I needed to purchase some crypto-currency (ETH),
+                    I had opened an account earlier with one of the leading exchanges
+                    in Nigeria, but I couldn’t remember the password to the account,
+                    the <i>‘Sign In’</i> page had a <i>‘Forgot password’</i>  option so I figured
+                    it would be as easy as resetting my password, I followed through
+                    and the flow had 5 steps:</p>
+
+                    <img class="project_hero" src="/Assets/Flow – 1@2x.png" alt="">
+
+                    <p class="body_text_case">The flow broke when it got to the second Authentication stage
+                        (the page prompts that the user is signing in with a new device
+                        and requests that the user enters an OTP that has been sent to
+                        the user’s email)</p>
+
+                    <p class="body_text_case">Problem is, I never received the email, I tried signing in a couple more times with no success, so I took my business elsewhere, but it bothered me and I wondered how many users they have lost/lose because of this.
+                        <br>
+                        <br>
+                        The following takes you through how I articulated and attempted to solve the problem.
+                        </p>
+
+                        <br>
+                        <br>
+                        <br>
+
+
+                        <h2>Problem Statement</h2>
+
+                    <p class="body_text_case">
+                        I already had a first-hand encounter with the problem so I used the HMW (How Might We) method to properly assimilate it and better troubleshoot for a solution.
+                        <br>
+                        <br>
+                        <strong>Challenge:</strong> Redesign the password reset experience
+                        <br>
+                        <br>
+                        <strong>POV:</strong> User needs to urgently purchase some crypto-currency, but can’t remember her/his password, hence can’t access the account.
+                    </p>
+
+                    <ul>
+                        <li>“How might we reduce the number of steps needed to reset the password?”</li>
+                        <li>“How might we make the password reset process as enjoyable as possible?”</li>
+                        <li>"How might we ensure that a user completes the process and avoid drop-offs?"</li>
+                    </ul>
+
+                    <p class="body_text_case">
+                        There were pertinent questions I also needed to answer that would
+                        form the foundation for my solution:
+                    </p>
+
+                    <ul>
+                        <li>What was the current state of password resets?</li>
+                        <li>What was the industry standard?</li>
+                        <li>What were the technicalities behind password resets?</li>
+                        <li>What were the tradeoffs to offering the best UX?</li>
+                    </ul>
+
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <h2>Research and Exploration</h2>
+
+                    <p class="body_text_case">In attempting to solve this problem, I knew I had to tackle the challenge both from a design and technical perspective.
+                        <br>
+                        </p>
+
+                    <p class="body_text_case">I started by crawling research papers, blog posts, customer care forums etc. for insights and my biggest discovery here was that there was always a tradeoff between Security and UX, However smooth the UX was, it had to be balanced with the right Security measures.
+                        There were essentially 3 factors to consider from a UX perspective:
+                        </p>
+
+                    <ul>
+                        <li> <strong>Steps to completion:</strong> Number of steps/pages a user has to go through to complete the process</li>
+                        <li> <strong>Information costs:</strong> Number of fields (basically, how much information a user has to enter to complete the process). </li>
+                        <li> <strong>Effort investments:</strong> Number of decisions/additional activities a user has to make/perform to complete the process.</li>
+                    </ul>
+
+                    <p class="body_text_case">In breaking down the Quidax flow, we could essentially visualize it as:</p>
+
+                    <img class="project_hero" src="/Assets/Flow – 3@2x.png" alt="">
+
+
+
+                    <p class="body_text_case">
+                        The problem with this current iteration was the redundancy of the second Authentication process (same email channel as the first authentication),
+                        In as much as the second authentication was a good measure to protect the user (detection of a new device) this could be implemented better.
+                        <br>
+                        <br>
+                        From visualizing it like this, we start to see how we could implement a solution, in taking the route with the smoothest UX, we could do:
+                    </p>
+
+                    <img class="project_hero" src="/Assets/simple flow@2x.png" alt="">
+
+                    <p class="body_text_case">
+                        The potential problem with this was the possibility of an unscrupulous party trying to access the account, as much as this gave the user a smooth experience, it also made it (too) easy for an unscrupulous party to gain access.
+                        I used the HMW method to frame it once again:
+                        <br>
+                        <br>
+
+                        <strong class="hmw"><i>“How might we ensure that a legitimate user can do a password reset as easily as possible?”</i> </strong>
+                        <br>
+                        <br>
+                    </p>
+                    <br>
+                    <br>
+                    <h2>Interview Insights</h2>
+
+                    <div class="body_text_case">
+                        At this point, it was clear that the main factor in balancing a smooth UX with Security was ensuring the legitimacy of the user requesting the password reset.
+
+                        I had already encountered the problem, but to solidify my research and gain more insights,
+                        i interviewed 3 people and was able to distill their responses into:
+                    </div>
+
+                    <img class="project_hero" src="/Assets/responses@2x.png" alt="">
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h2>Redesigning</h2>
+
+                    <p class="body_text_case">
+                        From my research, I discovered that the <i>‘Sign up’</i> stage was indeed the best stage to implement security measures.
+                        Contingencies always occur, and even the best email delivery systems fail to deliver sometimes, the essence of providing a great UX is providing layers of support and buffers when contingencies occur, and the ‘Sign Up’ stage turned out to be the best place to implement these to address situations like;
+                    </p>
+
+
+                    <ul>
+                        <li>Cases where the user no longer has access to the email used at sign up</li>
+                        <li>Cases where the user does not receive the verification link etc.</li>
+                    </ul>
+
+                    <p class="body_text_case">
+                        My focus on this project was the Password Reset Flow, so I only touch on the ‘Sign up’ flow to give a wholesome view of my solution.
+                        My solution involved introducing a ‘Guest Sign in’ feature while taking advantage of ‘Device Verification’ and ‘Security Questions’.
+                        <br>
+                        <br>
+                        This solution and implementation covers cases like;
+                    </p>
+
+                    <ul>
+                        <li>Forgotten Passwords</li>
+                        <li>Non delivered verification mails</li>
+                        <li>Inability to access email used at Sign up</li>
+                    </ul>
+
+                    <img class="project_hero" src="/Assets/Solution@2x.png" alt="">
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <h2>Breaking down the solution</h2>
+
+                    <p class="body_text_case">
+                        The flow illustrated above basically covers two (2) scenarios, for the normal
+                        password reset flow which is illustrated below, i removed the second (redundant)
+                        authentication and took advantage of device logs, in cases where the system detects
+                        the same last used device, access is granted, else user has to verify last used device
+                    </p>
+
+                    <img class="project_hero" src="/Assets/Story Board@2x.png" alt="">
+
+
+                    <p class="body_text_case">
+                        The second scenario covers situations like the one i encountered where the user doesn't
+                        receive a recovery link or no longer has access to the email used at sign up
+                    </p>
+
+                    <img class="project_hero" src="/Assets/Story Board – 2@2x.png" alt="">
+
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+
+
+
+
+
+
+                    <h2>Introducing a Guest Sign In feature</h2>
+
+                    <p class="body_text_case">
+                        There are legitimate cases where a user no longer has access to the email address used at Sign Up or as in my case doesn’t receive the verification mail.
+                        The solution accounts for situations like these thereby reducing drop-offs.
+                        The main rationale behind
+                        the 'Guest Sign In' was to reduce the 'Effort investments' and make contacting customer care the very last resort.
+                        I added a ‘Guest Sign In’ button to the ‘Input Email’ page, on clicking the button, the user is shown a ‘Security Questions’ Page.
+                    </p>
+
+                    <img class="project_hero" src="/Assets/guest sign in@2x.png" alt="">
+
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <h2>Security Questions</h2>
+
+                    <p class="body_text_case">
+                        Security questions can be tricky and are by no means fool proof, especially in situations where the user’s account holds
+                        personal/important details, but they provide an extra layer of security and can be implemented effectively.
+                        From my research I was able to distill some of the main factors to consider in offering effective security questions.
+                    </p>
+
+                    <ul>
+                        <li>Answers had to be constant over time</li>
+                        <li>Answers had to be specific</li>
+                        <li>Questions had to unambiguous etc.</li>
+                        <li>Questions couldn’t be generic.</li>
+                    </ul>
+
+                    <img class="project_hero" src="/Assets/security questions@2x.png" alt="">
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <h2>Verify Device</h2>
+
+                    <p class="body_text_case">
+                        Taking advantage of the system already logging devices, this acts as an extra
+                        layer of security
+                    </p>
+
+                    <img class="project_hero" src="/Assets/verify@2x.png" alt="">
+
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <img class="project_hero" src="/Assets/screens@2x.png" alt="">
+
+
+                    <br>
+                    <br>
+                    <br>
+
+
+
+
+                    <h2>Conclusion</h2>
+
+                    <p class="body_text_case">
+                        Security is a constantly evolving topic, and this solution is by no means fool proof, but it offers a fine balance between Security and a smooth UX.
+                        In implementing this solution, users are encouraged to set security questions at Sign up and the system logs their device.
+                        In situations where a user forgets their password, doesn’t have access to email used at Sign Up, doesn’t receive verification mail, the user has the option of using the ‘Guest Sign in’ option to access the account.
+                    </p>
+
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <h2>Lessons and final thoughts</h2>
+
+                    <p class="body_text_case">
+                        I learnt a lot about the technicalities behind Sign up flows like hashing and encryption, the project also triggered my thoughts around re-imagining Sign up flows.
+                        Because this was a redesign, i was restricted to using the company's brand guidelines and
+                        i couldn't really explore layout and visual design ideas.
+                        <br>
+                        <br>
+                        But most importantly, it reiterated the importance of talking to actual users; initially, because I was solving a problem I encountered, I almost fooled myself into thinking I didn’t need to talk anybody, but talking to the few users I interviewed helped me put things in context.
+                        There are more ways to re-imagine this problem, and I will continue exploring.
+
+                        <br>
+
+                        <br>
+
+                        Cheers!
+                        
+                        <br>
+                        <br>
+                        <br>
+
+                    </p>
+
+
+
+
+
+
+                </article>
+
+                <div class="bottom_space">
+
+                </div>
+
+
+            </div>
+
+
+</div>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Bottom Menu-->
+        <div class="menu_bar">
+            <div class="menu_b"> <img class="item" src="Assets/bxs-pointer.svg" alt=""> <a class="text" href="index.html">Home</a>  </div>
+            <div class="menu_b"> <img class="item" src="/Assets/fingerprint.svg" alt=""> <a class="text" href="/about.html">About</a> </div>
+            <div class="menu_b"> <img class="item" src="/Assets/folder-open - Focus.svg" alt=""> <a class="text_active" href="/projects.html">Projects</a> </div>
+            <div class="menu_b"> <img class="item" src="Assets/web-grid.svg" alt=""> <a class="text" href="/experiments.html">Experiments</a> </div>
+        </div>
+
+    </div>
+</body>
+</html>
